@@ -1,53 +1,151 @@
 <!DOCTYPE html>
-<html lang="kn">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>ಮೆನು | Hotel Saanvi Grand</title>
+<title>Hotel Saanvi Grand – Full Menu</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0;font-family:'Poppins',sans-serif}
-body{background:#0f0f0f;color:#fff}
-.section{padding:30px 20px;max-width:900px;margin:auto}
-h1,h2{color:#ffd27d;margin-bottom:15px}
-.card{background:#181818;border-radius:12px;padding:15px;margin-bottom:15px}
-a{color:#ffd27d;text-decoration:none}
-.top{padding:15px;text-align:center;background:#111}
+*{box-sizing:border-box;margin:0;padding:0;font-family:Poppins,sans-serif}
+body{background:#0e0e0e;color:#fff}
+
+.header{
+  text-align:center;
+  padding:30px 15px;
+  background:linear-gradient(135deg,#000,#1a1a1a);
+}
+.header h1{color:#f5c16c;font-size:2rem}
+.header p{color:#aaa}
+
+.section{padding:20px;max-width:1100px;margin:auto}
+
+.card{
+  background:#151515;
+  border-radius:16px;
+  padding:20px;
+  margin-bottom:20px;
+  animation:fadeUp .6s ease both;
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+h2{color:#f5c16c;margin-bottom:15px}
+
+.menu-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:10px;
+}
+
+.menu-item{
+  background:#1f1f1f;
+  padding:10px;
+  border-radius:10px;
+  text-align:center;
+}
+
+.menu-item span{display:block;color:#aaa;font-size:.9rem}
+
+.menu-images{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
+}
+
+.menu-images img{
+  width:100%;
+  border-radius:12px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.menu-images img:hover{
+  transform:scale(1.03);
+}
+
+.footer{
+  text-align:center;
+  color:#888;
+  padding:20px;
+}
+
+/* Image popup */
+.popup{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.9);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:999;
+}
+.popup img{
+  max-width:95%;
+  max-height:95%;
+  border-radius:12px;
+}
 </style>
 </head>
+
 <body>
 
-<div class="top">
-  <h1>🍽️ ನಮ್ಮ ಮೆನು</h1>
-  <a href="index.html">← ಹೋಮ್‌ಗೆ ಹಿಂದಿರುಗಿ</a>
+<div class="header">
+  <h1>Hotel Saanvi Grand</h1>
+  <p>Complete Menu</p>
 </div>
 
 <div class="section">
-  <h2>ಬಿರಿಯಾನಿ</h2>
-  <div class="card">ಚಿಕನ್ ಬಿರಿಯಾನಿ</div>
-  <div class="card">ಮಟನ್ ಬಿರಿಯಾನಿ</div>
-  <div class="card">ಎಗ್ ಬಿರಿಯಾನಿ</div>
 
-  <h2>ಸ್ಟಾರ್ಟರ್ಸ್</h2>
-  <div class="card">ಚಿಕನ್ 65</div>
-  <div class="card">ಚಿಲ್ಲಿ ಚಿಕನ್</div>
+  <!-- TEXT MENU -->
+  <div class="card">
+    <h2>🍽 Popular Items</h2>
+    <div class="menu-grid">
+      <div class="menu-item">Chicken Biryani <span>₹200</span></div>
+      <div class="menu-item">Mutton Biryani <span>₹290</span></div>
+      <div class="menu-item">Butter Chicken <span>₹270</span></div>
+      <div class="menu-item">Chicken 555 <span>₹280</span></div>
+      <div class="menu-item">Ghee Roast <span>₹280</span></div>
+      <div class="menu-item">Egg Masala <span>₹150</span></div>
+    </div>
+  </div>
 
-  <h2>ತಂದೂರ್</h2>
-  <div class="card">ತಂದೂರಿ ಚಿಕನ್</div>
-  <div class="card">ಚಿಕನ್ ಟಿಕ್ಕಾ</div>
+  <!-- IMAGE MENU -->
+  <div class="card">
+    <h2>📸 Full Menu (Images)</h2>
+    <p style="color:#aaa;margin-bottom:10px">Tap any image to zoom</p>
 
-  <h2>ಕರ್ರಿಗಳು</h2>
-  <div class="card">ಬಟರ್ ಚಿಕನ್</div>
-  <div class="card">ಮಟನ್ ಕರ್ರಿ</div>
+    <div class="menu-images">
+      <!-- You will replace these image links with your real ones -->
+      <img src="menu1.jpg" onclick="openImg(this.src)">
+      <img src="menu2.jpg" onclick="openImg(this.src)">
+    </div>
+  </div>
 
-  <h2>ರೈಸ್ & ನೂಡಲ್ಸ್</h2>
-  <div class="card">ಫ್ರೈಡ್ ರೈಸ್</div>
-  <div class="card">ನೂಡಲ್ಸ್</div>
-
-  <h2>ಎಗ್ ಐಟಮ್ಸ್</h2>
-  <div class="card">ಎಗ್ ಮಸಾಲಾ</div>
-  <div class="card">ಆಮ್ಲೆಟ್</div>
 </div>
+
+<div class="footer">
+  © 2026 Hotel Saanvi Grand
+</div>
+
+<!-- POPUP -->
+<div class="popup" id="popup" onclick="closeImg()">
+  <img id="popupImg">
+</div>
+
+<script>
+function openImg(src){
+  document.getElementById("popup").style.display="flex";
+  document.getElementById("popupImg").src = src;
+}
+function closeImg(){
+  document.getElementById("popup").style.display="none";
+}
+</script>
 
 </body>
 </html>
